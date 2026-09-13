@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libro Interactivo · Francés 1° Secundaria</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-title">
+      <span class="book-icon">📖</span>
+      <div>
+        <h1>Francés 1° de Secundaria <span class="subtitle">Libro Abierto · MINERD</span></h1>
+      </div>
+    </div>
+    <div class="topbar-controls">
+      <label class="unit-jump">
+        Unidad:
+        <select id="unitSelect"></select>
+      </label>
+      <button id="toggleZones" class="btn btn-toggle" title="Mostrar/ocultar las zonas con audio">🔊 Ver zonas de audio</button>
+    </div>
+  </header>
+
+  <main class="viewer">
+    <button id="prevBtn" class="nav-arrow nav-prev" aria-label="Página anterior">‹</button>
+
+    <div class="page-stage">
+      <div id="pageContainer" class="page-container">
+        <img id="pageImage" class="page-image" alt="Página del libro">
+        <div id="hotspotLayer" class="hotspot-layer"></div>
+      </div>
+      <div id="loadingMsg" class="loading-msg">Cargando…</div>
+    </div>
+
+    <button id="nextBtn" class="nav-arrow nav-next" aria-label="Página siguiente">›</button>
+  </main>
+
+  <footer class="bottombar">
+    <button id="firstBtn" class="btn btn-small">⏮ Portada</button>
+    <div class="page-jump">
+      <input type="number" id="pageInput" min="1" value="1">
+      <span id="pageTotal">/ …</span>
+      <button id="goBtn" class="btn btn-small">Ir</button>
+    </div>
+    <span class="hint">Clic sobre el texto en francés para escucharlo 🔊</span>
+  </footer>
+
+  <script src="data/pages.js"></script>
+  <script src="js/reader.js"></script>
+</body>
+</html>

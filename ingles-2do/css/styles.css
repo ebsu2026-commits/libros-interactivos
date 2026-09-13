@@ -1,0 +1,234 @@
+:root {
+  --bg: #14141f;
+  --panel: #1e1e30;
+  --accent: #f5a524;
+  --accent-soft: rgba(245, 165, 36, 0.28);
+  --accent-soft-hover: rgba(245, 165, 36, 0.48);
+  --text: #eee6d8;
+  --text-dim: #9a95ab;
+  --speaking: rgba(76, 201, 145, 0.55);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid #33334a;
+  flex-wrap: wrap;
+}
+
+.topbar-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.book-icon { font-size: 28px; }
+
+.topbar-title h1 {
+  font-size: 17px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.unit-jump {
+  font-size: 13px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+select, input[type="number"] {
+  background: #2a2a40;
+  color: var(--text);
+  border: 1px solid #40405c;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
+.btn {
+  background: #2a2a40;
+  color: var(--text);
+  border: 1px solid #40405c;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn:hover { background: #34344e; border-color: var(--accent); }
+
+.btn-toggle.active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: #ffdca8;
+}
+
+.btn-small { padding: 6px 10px; font-size: 12px; }
+
+.viewer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  min-height: 0;
+}
+
+.nav-arrow {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid #40405c;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.nav-arrow:hover { background: var(--accent-soft); transform: scale(1.05); }
+.nav-arrow:disabled { opacity: 0.3; cursor: default; transform: none; }
+
+.page-stage {
+  position: relative;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container {
+  position: relative;
+  max-height: calc(100vh - 140px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #fff;
+  line-height: 0;
+}
+
+.page-image {
+  display: block;
+  max-height: calc(100vh - 140px);
+  max-width: 82vw;
+  width: auto;
+  height: auto;
+  user-select: none;
+}
+
+.hotspot-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.hotspot {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 3px;
+  background: transparent;
+  transition: background 0.12s;
+}
+
+.zones-visible .hotspot {
+  background: var(--accent-soft);
+  outline: 1px solid rgba(245, 165, 36, 0.55);
+}
+
+.hotspot:hover {
+  background: var(--accent-soft-hover) !important;
+  outline: 1px solid var(--accent) !important;
+}
+
+.hotspot.speaking {
+  background: var(--speaking) !important;
+  outline: 1.5px solid #4cc991 !important;
+}
+
+.loading-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 14px;
+  background: rgba(20, 20, 31, 0.6);
+}
+
+.loading-msg.hidden { display: none; }
+
+.bottombar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 10px 20px;
+  background: var(--panel);
+  border-top: 1px solid #33334a;
+  flex-wrap: wrap;
+}
+
+.page-jump {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-jump input {
+  width: 56px;
+  text-align: center;
+}
+
+#pageTotal { color: var(--text-dim); font-size: 13px; }
+
+.hint {
+  color: var(--text-dim);
+  font-size: 12.5px;
+}
+
+@media (max-width: 720px) {
+  .topbar { flex-direction: column; align-items: flex-start; }
+  .page-image, .page-container { max-width: 94vw; }
+  .hint { display: none; }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Libros Interactivos — Centro Educativo Salomé Ureña</title>
+<style>
+  :root{
+    --bg:#14141f; --panel:#1e1e30; --text:#eee6d8; --text-dim:#9a95ab;
+    --accent:#f5a524; --accent-soft:rgba(245,165,36,.15); --border:#33334a;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:"Segoe UI", system-ui, -apple-system, sans-serif;
+    padding:48px 20px 60px;
+  }
+  .wrap{ max-width:920px; margin:0 auto; }
+  header{ text-align:center; margin-bottom:44px; }
+  header .icon{ font-size:2.2rem; }
+  h1{ margin:8px 0 6px; font-size:2rem; }
+  header p{ color:var(--text-dim); margin:0; font-size:1.02rem; }
+  h2.lang-title{
+    font-size:1.05rem; text-transform:uppercase; letter-spacing:.08em;
+    color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:8px;
+    margin:36px 0 16px;
+  }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; }
+  a.card{
+    display:block; background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    padding:18px 20px; text-decoration:none; color:var(--text);
+    transition:border-color .15s, transform .15s;
+  }
+  a.card:hover{ border-color:var(--accent); transform:translateY(-2px); }
+  a.card .grade{ font-weight:700; font-size:1.08rem; }
+  a.card .sub{ display:block; color:var(--text-dim); font-size:.85rem; margin-top:4px; }
+  a.card .go{ display:block; color:var(--accent); font-size:.82rem; margin-top:10px; }
+  footer{ text-align:center; margin-top:56px; color:var(--text-dim); font-size:.82rem; line-height:1.6; }
+  footer a{ color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="icon">📖</span>
+    <h1>Libros Interactivos</h1>
+    <p>Libro Abierto (MINERD) con audio de pronunciación — Centro Educativo Salomé Ureña</p>
+  </header>
+
+  <h2 class="lang-title">Inglés</h2>
+  <div class="grid">
+    <a class="card" href="ingles-1ro/index.html">
+      <span class="grade">1° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Inglés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+    <a class="card" href="ingles-2do/index.html">
+      <span class="grade">2° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Inglés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+    <a class="card" href="ingles-3ro/index.html">
+      <span class="grade">3° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Inglés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+    <a class="card" href="ingles-6to-primaria/index.html">
+      <span class="grade">6° de Primaria</span>
+      <span class="sub">Lenguas Extranjeras · Inglés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+  </div>
+
+  <h2 class="lang-title">Francés</h2>
+  <div class="grid">
+    <a class="card" href="frances-1ro/index.html">
+      <span class="grade">1° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Francés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+    <a class="card" href="frances-2do/index.html">
+      <span class="grade">2° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Francés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+    <a class="card" href="frances-3ro/index.html">
+      <span class="grade">3° de Secundaria</span>
+      <span class="sub">Lenguas Extranjeras · Francés</span>
+      <span class="go">Abrir libro →</span>
+    </a>
+  </div>
+
+  <footer>
+    Contenido educativo: Ministerio de Educación de la República Dominicana (MINERD), colección <em>Libro Abierto</em>, Serie 2 — <a href="https://libroabierto.minerd.gob.do" target="_blank" rel="noopener">libroabierto.minerd.gob.do</a>.<br>
+    Cada página incluye zonas de audio con pronunciación pre-grabada (voz neuronal), funcionan sin conexión a internet.
+  </footer>
+</div>
+</body>
+</html>
