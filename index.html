@@ -38,10 +38,29 @@
   a.card .go{ display:block; color:var(--accent); font-size:.82rem; margin-top:10px; }
   footer{ text-align:center; margin-top:56px; color:var(--text-dim); font-size:.82rem; line-height:1.6; }
   footer a{ color:var(--accent); }
+
+  .site-nav{
+    display:flex; justify-content:center; gap:6px; flex-wrap:wrap;
+    background:var(--panel); border:1px solid var(--border); border-radius:999px;
+    padding:6px; width:fit-content; margin:0 auto 28px;
+  }
+  .site-nav a{
+    text-decoration:none; font-size:.82rem; color:var(--text-dim); font-weight:600;
+    padding:7px 14px; border-radius:999px; transition:background .15s,color .15s;
+  }
+  .site-nav a:hover{ color:var(--text); background:#ffffff0a; }
+  .site-nav a.current{ background:var(--accent); color:var(--bg); }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <nav class="site-nav">
+    <a href="https://mieducacion.es">🏠 Inicio</a>
+    <a href="https://libros.mieducacion.es" class="current">📖 Libros</a>
+    <a href="https://cuadernos.mieducacion.es">📓 Cuadernos</a>
+    <a href="https://verbos.mieducacion.es">🔤 Verbos</a>
+  </nav>
+
   <header>
     <span class="icon">📖</span>
     <h1>Libros Interactivos</h1>
